@@ -1,0 +1,13 @@
+#!/usr/bin/env python
+
+import SimpleCV
+
+
+cam = SimpleCV.Camera()
+
+while True:
+	img = cam.getImage()
+	faces = img.findHaarFeatures('face.xml')
+	if faces:
+		faces[0].draw()
+	img.show()
